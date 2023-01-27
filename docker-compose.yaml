@@ -1,0 +1,15 @@
+volumes:
+  node_modules:
+services:
+  app:
+    build:
+      context: .
+    tty: true
+    volumes:
+      - ./apps:/app
+      # - node_modules:/app/web/node_modules
+    environment:
+      - WATCHPACK_POLLING=trued
+    command: sh -c "cd web && yarn install && yarn run dev"
+    ports:
+      - "3000:3000"
