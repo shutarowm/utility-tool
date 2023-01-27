@@ -1,2 +1,6 @@
 FROM node:18.13-slim
-WORKDIR /app
+ADD ./apps /app
+WORKDIR /app/web
+RUN yarn install
+RUN yarn build
+RUN yarn start
