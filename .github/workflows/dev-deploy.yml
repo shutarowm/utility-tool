@@ -47,6 +47,6 @@ jobs:
             --project=$PROJECT_ID \
             --image=asia.gcr.io/$PROJECT_ID/$SERVICE_NAME:${{ github.sha }} \
             --region=$REGION \
-            --region="asia-northeast1"
+            --region="asia-northeast1" \
             --service-account=app-web@$PROJECT_ID.iam.gserviceaccount.com \
             --allow-unauthenticated
